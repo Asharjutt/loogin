@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar (same as before) -->
+ <!-- Navbar -->
+ <nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="logo">
+     <h1 >ASHAR.IN</h1>
+    </div>
+
+    <!-- Navbar links -->
+    <ul class="nav-links">
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="#restaurant">Home<i class='bx bx-lock icon'></i></a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#promotion">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="#" class="facebook"><i class='bx bxl-facebook'></i></a>
+      <a href="#" class="twitter"><i class='bx bxl-twitter'></i></a>
+      <a href="#" class="instagram"><i class='bx bxl-instagram'></i></a>
+      <a href="#" class="youtube"><i class='bx bxl-youtube'></i></a>
+    </div>
+    
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger">
+      <i class='bx bx-menu' style="color: #D19E1E; "></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div class="mobile-menu">
+  <ul>
+    <li><a href="#showtime"><u style="color: #D19E1E;">Sign Up</u></a></li>
+    <li><a href="#restaurant">Reviews</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#promotion">About Us</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+
+    <div class="social-icon">
+      <a href="#" class="facebook"><i class='bx bxl-facebook'></i></a>
+      <a href="#" class="twitter"><i class='bx bxl-twitter'></i></a>
+      <a href="#" class="instagram"><i class='bx bxl-instagram'></i></a>
+      <a href="#" class="youtube"><i class='bx bxl-youtube'></i></a>
+    </div>
+  </ul>
+</div>
+<!--section of navbar is ended here-->
+
+
+
+
+
+  <!-- Animated Login Form -->
+  <div class="login-form-container">
+    <h2>Login <i class='bx bx-log-in login-icon'></i></h2> 
+    <form class="login-form" onsubmit="return handleLogin(event)">
+      <div class="input-group">
+        <i class='bx bx-user'></i>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+      </div>
+      <div class="input-group">
+        <i class='bx bx-lock-alt'></i>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="no-account">
+      <i class='bx bx-user-plus'></i>
+      <span>Don't have an account?</span>
+      <a href="signup.html" style="text-decoration: none; color: red; margin-left: 5px;">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent form submission
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Retrieve user data from localStorage
+      const userData = JSON.parse(localStorage.getItem('user'));
+
+      // Validate credentials
+      if (userData && userData.username === username && userData.password === password) {
+        alert('Welcome to the home page!');
+        window.location.href = 'index.html'; // Redirect to home page
+      } else {
+        alert('Wrong username or password!');
+      }
+    }
+  </script>
+</body>
+</html>

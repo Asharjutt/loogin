@@ -1,0 +1,488 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Raleway', sans-serif;
+   
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #0C0C0C;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 150px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5em;
+  }
+  
+  .nav-links a:hover {
+    background-color: #494949;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #D19E1E;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Social Media Icons */
+  .social-icons a {
+    color: white;
+    margin-left: 1em;
+    font-size: 1.5em;
+  }
+  /* Social Media Icon Hover Effects */
+.social-icons a {
+    color: white; /* Default color */
+    font-size: 1.5em;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  
+  
+  .social-icons a.facebook:hover {
+    color: #1877F2; /* Facebook blue */
+  }
+  
+  .social-icons a.twitter:hover {
+    color: #1DA1F2; /* Twitter blue */
+  }
+  
+  .social-icons a.instagram:hover {
+    color: #E4405F; /* Instagram pinkish-orange */
+  }
+  
+  .social-icons a.youtube:hover {
+    color: #FF0000; /* YouTube red */
+  }
+  
+  /* Hamburger Icon */
+  .hamburger {
+    display: none;
+    font-size: 1.8em;
+    color: white;
+  }
+  
+  /* Mobile Dropdown Menu */
+  .mobile-menu {
+    display: none;
+    background-color: #0C0C0C;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 1em 0;
+    z-index: 9;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .mobile-menu li {
+    margin: 0.5em 0;
+  }
+  
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+  }
+  
+  .mobile-menu a:hover {
+    background-color: #494949;
+  }
+  
+.social-icon
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    justify-content: center;
+}
+
+
+.social-icon a.facebook:hover {
+    color: #1877F2; /* Facebook blue */
+  }
+  
+  .social-icon a.twitter:hover {
+    color: #1DA1F2; /* Twitter blue */
+  }
+  
+  .social-icon a.instagram:hover {
+    color: #E4405F; /* Instagram pinkish-orange */
+  }
+  
+  .social-icon a.youtube:hover {
+    color: #FF0000; /* YouTube red */
+  }
+
+  /* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Dropdown Menu */
+  .mobile-menu {
+    display: none;
+    background-color: #0C0C0C;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 1em 0;
+    z-index: 9;
+    opacity: 0;
+    transform: translateY(-10px); /* initial state for animation */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .mobile-menu.show {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .social-icons {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .mobile-menu.show {
+      display: block;
+    }
+  }
+  
+
+
+  
+/* Login Form Container Styling */
+.login-form-container {
+    background-color: #0C0C0C;
+    color: white;
+    width: 350px;
+    margin: 100px auto;
+    padding: 2em;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.7s ease forwards;
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  
+  /* Slide-down animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Form Title */
+  .login-form-container h2 {
+    font-size: 24px;
+    color: #D19E1E;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Group Styling */
+  .login-form .input-group {
+    display: flex;
+    align-items: center;
+    background-color: #1F1F1F;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
+  
+  .login-form .input-group i {
+    color: #D19E1E;
+    margin-right: 10px;
+    font-size: 1.2em;
+  }
+  
+  .login-form .input-group input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  /* Login Button Styling */
+  .login-form .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D19E1E;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .login-form .login-button:hover {
+    background-color: #E2B64A;
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-form-container {
+      width: 90%;
+    }
+  }
+  
+
+
+  /* Popup styling */
+.popup {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: #D19E1E; /* Default color */
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon styling inside popup */
+  .popup i {
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+  
+  /* Fade-out animation */
+  .popup.fade-out {
+    opacity: 0;
+  }
+
+  
+
+
+
+
+
+
+
+  /* body animation */
+  /* Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(130deg, #0C0C0C, #333333, #0C0C0C);
+    background-size: 200% 200%;
+    animation: backgroundAnimation 10s infinite alternate;
+    z-index: -1;
+  }
+  
+  /* Keyframes for background animation */
+  @keyframes backgroundAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Glowing gradient overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(209, 158, 30, 0.1), rgba(0, 0, 0, 0) 70%);
+    mix-blend-mode: overlay;
+    animation: glowPulse 6s infinite alternate;
+    z-index: -1;
+  }
+  
+  /* Keyframes for glow pulse */
+  @keyframes glowPulse {
+    from {
+      opacity: 0.2;
+    }
+    to {
+      opacity: 0.4;
+    }
+  }
+  
+  /* body animation */
+
+
+
+
+/* Styling for "Don't have an account?" section */
+.no-account {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #D19E1E; /* Matching theme color */
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.no-account i {
+  margin-right: 0.5em; /* Spacing between icon and text */
+  transition: color 0.3s ease;
+}
+
+.no-account:hover i {
+  color: #E2B64A; /* Hover color effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for the login icon */
+.login-icon {
+    font-size: 1rem; /* Adjust size as needed */
+    color: #D19E1E; /* Matching theme color */
+    transition: color 0.3s ease; /* Optional hover effect */
+  }
+  
+  .login-icon:hover {
+    color: #E2B64A; /* Change color on hover */
+  }
+  
+
+
+
+
+  /* Styling for the signup icon */
+.signup-icon {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #D19E1E; /* Matching theme color */
+    transition: color 0.3s ease;
+    margin-left: 10px; /* Optional hover effect */
+  }
+  
+  .signup-icon:hover {
+    color: #E2B64A; /* Change color on hover */
+  }
+  
+
+
+
+  .gmail-icon {
+    font-size: 40px; /* Adjust size as needed */
+    color: red;      /* Change color if desired */
+}
+
+
+
+.name-icon {
+    font-size: 40px; /* Adjust size as needed */
+    color: #000;     /* Change color if desired */
+}
+
+
+
+.icon {
+    font-size: 20px; /* Adjust size as needed */
+    color:#D19E1E;  /* Change color to pink */
+  }
+
+
+
+  
